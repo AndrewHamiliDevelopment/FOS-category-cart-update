@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
@@ -24,6 +25,27 @@ function App() {
       </main>
       <Footer />
     </>
+=======
+import './App.css';
+import Header from './components/Header'
+import Footer from './components/Footer'
+
+function App() {
+  return (
+
+    
+  <>
+  <Header />
+
+  <main>
+  <h1>welcome myfirstreactproject</h1>
+  </main>
+
+  <Footer />
+
+  
+  </>
+>>>>>>> 3e2941a67890a339659d6351097c0c8bf4d14fda
   );
 }
 

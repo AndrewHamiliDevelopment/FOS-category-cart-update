@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { AppBar, Box, Toolbar, Typography, InputAdornment, Badge, Tabs, Tab, Button, IconButton, TextField, Grid, Card, CardMedia, CardContent, Drawer } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -72,11 +73,43 @@ const Header = () => {
             </IconButton>
             <img src="/mcdo.png" alt="Restaurant Logo" style={{ height: '50px', width: 'auto' }} />
             <Typography variant="h6" sx={{ ml: 1, fontWeight: 'bold', color: 'black' }}>
+=======
+import React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import { Toolbar, Typography, InputAdornment } from '@mui/material';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
+import { TextField } from '@mui/material';
+
+const Header = () => {
+  return (
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static" sx={{ backgroundColor: '#FFC300', padding: '5px 20px' }}> 
+        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          {/* Left Section: Logo and Menu Button */}
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+              <MenuIcon />
+            </IconButton>
+            <img 
+              src="/mcdo.png"  
+              alt="Restaurant Logo" 
+              style={{ height: '50px', width: 'auto' }} 
+            />
+            <Typography variant="h6" component="div" sx={{ ml: 1, fontWeight: 'bold', color: 'black' }}>
+>>>>>>> 3e2941a67890a339659d6351097c0c8bf4d14fda
               McDelivery
             </Typography>
           </Box>
 
+<<<<<<< HEAD
           {/* Search Box */}
+=======
+          {/* Center: Search Box */}
+>>>>>>> 3e2941a67890a339659d6351097c0c8bf4d14fda
           <TextField
             variant="outlined"
             placeholder="Search for your McDonald's favorites"
@@ -84,7 +117,10 @@ const Header = () => {
             sx={{
               backgroundColor: 'white',
               borderRadius: '30px',
+<<<<<<< HEAD
               marginLeft: '200px',
+=======
+>>>>>>> 3e2941a67890a339659d6351097c0c8bf4d14fda
               width: '400px',
               '& .MuiOutlinedInput-root': {
                 '& fieldset': { borderColor: 'gray' },
@@ -101,6 +137,7 @@ const Header = () => {
             }}
           />
 
+<<<<<<< HEAD
           {/* Navigation Links & Cart */}
           <Box sx={{ display: 'flex', alignItems: 'left', marginLeft: '550px' }}>
           {[
@@ -187,8 +224,42 @@ const Header = () => {
 </Grid>
 
       </Box>
+=======
+          {/* Right Section: Navigation Links & Cart */}
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            {['Home', 'Menu', 'Send to Many', 'Orders', 'My Account'].map((text) => (
+              <Button 
+                key={text} 
+                sx={{ 
+                  color: 'black', 
+                  fontSize: '16px', 
+                  fontWeight: 'bold', 
+                  textTransform: 'none', 
+                  mx: 1, 
+                  fontFamily: 'Roboto, sans-serif'
+                }}
+              >
+                {text}
+              </Button>
+            ))}
+
+            <IconButton sx={{ color: 'black', ml: 2 }}>
+              <img
+                src="/basket.png"  
+                alt="Cart"
+                style={{ height: '30px', width: 'auto' }}  
+              />
+            </IconButton>
+          </Box>
+        </Toolbar>
+      </AppBar>
+>>>>>>> 3e2941a67890a339659d6351097c0c8bf4d14fda
     </Box>
   );
 };
 
+<<<<<<< HEAD
 export default Header;
+=======
+export default Header;
+>>>>>>> 3e2941a67890a339659d6351097c0c8bf4d14fda
