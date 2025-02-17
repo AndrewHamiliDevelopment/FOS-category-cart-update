@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { AppBar, Box, Toolbar, Typography, InputAdornment, Badge, Tabs, Tab, Button, IconButton, TextField, Grid, Card, CardMedia, CardContent, Drawer } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -33,6 +34,23 @@ const Header = () => {
   const [selectedCategory, setSelectedCategory] = useState(categories[0]); // Default category
 
   // Function to add items to the cart
+=======
+import React, { useState } from 'react';
+import { AppBar, Box, Toolbar, Typography, InputAdornment, Badge, Button, IconButton, TextField, Drawer } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import LoginSignup from './LoginSignup'; 
+import Cart from './Cart';
+import { Link, useLocation } from "react-router-dom"; 
+import Menu from './Menu'; 
+
+const Header = () => {
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [cart, setCart] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+>>>>>>> d55f30e (Updated Checkout and LoginSignup)
   const addToCart = (item) => {
     setCart((prevCart) => {
       const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);
@@ -45,6 +63,7 @@ const Header = () => {
       }
     });
   };
+<<<<<<< HEAD
   // Function to remove items from the cart
   const removeFromCart = (itemId) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== itemId));
@@ -60,19 +79,28 @@ const Header = () => {
   };
   // Filter food items based on selected category
   const filteredItems = foodItems.filter(item => item.category === selectedCategory);
+=======
+
+  const location = useLocation();
+>>>>>>> d55f30e (Updated Checkout and LoginSignup)
 
   return (
     <Box sx={{ flexGrow: 10 }}>
       <AppBar position="sticky" sx={{ backgroundColor: '#FFC300', padding: '8px 20px' }}> 
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+<<<<<<< HEAD
        {/* Navigation Links & Cart */}
     
+=======
+          {/* Logo and Search Bar */}
+>>>>>>> d55f30e (Updated Checkout and LoginSignup)
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
               <MenuIcon sx={{ fontSize: 30, color: 'black' }} />
             </IconButton>
             <img src="/mcdo.png" alt="Restaurant Logo" style={{ height: '50px', width: 'auto' }} />
             <Typography variant="h6" sx={{ ml: 1, fontWeight: 'bold', color: 'black' }}>
+<<<<<<< HEAD
 =======
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
@@ -101,15 +129,21 @@ const Header = () => {
             />
             <Typography variant="h6" component="div" sx={{ ml: 1, fontWeight: 'bold', color: 'black' }}>
 >>>>>>> 3e2941a67890a339659d6351097c0c8bf4d14fda
+=======
+>>>>>>> d55f30e (Updated Checkout and LoginSignup)
               McDelivery
             </Typography>
           </Box>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
           {/* Search Box */}
 =======
           {/* Center: Search Box */}
 >>>>>>> 3e2941a67890a339659d6351097c0c8bf4d14fda
+=======
+          {/* Search Box */}
+>>>>>>> d55f30e (Updated Checkout and LoginSignup)
           <TextField
             variant="outlined"
             placeholder="Search for your McDonald's favorites"
@@ -118,9 +152,13 @@ const Header = () => {
               backgroundColor: 'white',
               borderRadius: '30px',
 <<<<<<< HEAD
+<<<<<<< HEAD
               marginLeft: '200px',
 =======
 >>>>>>> 3e2941a67890a339659d6351097c0c8bf4d14fda
+=======
+              marginLeft: '200px',
+>>>>>>> d55f30e (Updated Checkout and LoginSignup)
               width: '400px',
               '& .MuiOutlinedInput-root': {
                 '& fieldset': { borderColor: 'gray' },
@@ -137,6 +175,7 @@ const Header = () => {
             }}
           />
 
+<<<<<<< HEAD
 <<<<<<< HEAD
           {/* Navigation Links & Cart */}
           <Box sx={{ display: 'flex', alignItems: 'left', marginLeft: '550px' }}>
@@ -164,11 +203,28 @@ const Header = () => {
               </Badge>
             </IconButton>
           
+=======
+          {/* Navigation Links & Cart */}
+          <Box sx={{ display: 'flex', alignItems: 'left', marginLeft: 'auto' }}>
+            <Button sx={{ color: 'black', textTransform: 'none', fontWeight: 'bold' }} component={Link} to="/Home">Home</Button>
+            <Button sx={{ color: 'black', textTransform: 'none', fontWeight: 'bold' }} component={Link} to="/Menu">Menu</Button>
+            <Button sx={{ color: 'black', textTransform: 'none', fontWeight: 'bold' }} component={Link} to="/">Profile</Button>
+            <Button sx={{ color: 'black', textTransform: 'none', fontWeight: 'bold' }} onClick={() => setIsLoginOpen(true)}>My Account</Button>
+          </Box>
+
+          {/* Shopping Cart */}
+          <IconButton sx={{ color: 'black', ml: 7 }} onClick={() => setIsCartOpen(true)}>
+            <Badge badgeContent={cart.length} color="error">
+              <ShoppingCartIcon sx={{ fontSize: 28 }} />
+            </Badge>
+          </IconButton>
+>>>>>>> d55f30e (Updated Checkout and LoginSignup)
         </Toolbar>
       </AppBar>
 
       {/* Cart Drawer */}
       <Drawer anchor="right" open={isCartOpen} onClose={() => setIsCartOpen(false)}>
+<<<<<<< HEAD
         <Cart cartItems={cart} 
         onRemoveItem={removeFromCart} 
         onUpdateQuantity={updateQuantity} 
@@ -254,12 +310,37 @@ const Header = () => {
         </Toolbar>
       </AppBar>
 >>>>>>> 3e2941a67890a339659d6351097c0c8bf4d14fda
+=======
+  <Cart 
+    cartItems={cart} 
+    onUpdateQuantity={(itemId, change) => {
+      setCart((prevCart) =>
+        prevCart.map((item) =>
+          item.id === itemId ? { ...item, quantity: Math.max(1, item.quantity + change) } : item
+        )
+      );
+    }}
+    onRemoveItem={(itemId) => {
+      setCart((prevCart) => prevCart.filter((item) => item.id !== itemId));
+    }}
+  />
+</Drawer>
+      {/* already call in header */}
+      {location.pathname === "/Menu" && <Menu addToCart={addToCart} />}
+
+
+      {isLoginOpen && <LoginSignup isOpen={isLoginOpen} setIsOpen={setIsLoginOpen} />}
+>>>>>>> d55f30e (Updated Checkout and LoginSignup)
     </Box>
   );
 };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default Header;
 =======
 export default Header;
 >>>>>>> 3e2941a67890a339659d6351097c0c8bf4d14fda
+=======
+export default Header;
+>>>>>>> d55f30e (Updated Checkout and LoginSignup)

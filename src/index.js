@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d55f30e (Updated Checkout and LoginSignup)
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -14,6 +17,7 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>
 );
+<<<<<<< HEAD
 =======
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -29,3 +33,5 @@ root.render(
 
 
 >>>>>>> 3e2941a67890a339659d6351097c0c8bf4d14fda
+=======
+>>>>>>> d55f30e (Updated Checkout and LoginSignup)
